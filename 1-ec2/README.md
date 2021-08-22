@@ -14,7 +14,7 @@
 - Confirm and the instance will start
 
 ```shell
- aws ec2 run-instances --image-id ami-0443305dabd4be2bc --instance-type t2.nano --key-name rob --region eu-west-1
+ aws ec2 run-instances --image-id ami-02b4e72b17337d6c1 --instance-type t2.nano --key-name rob --region eu-west-1
 ```
 
 ## Connecting to the EC2 instance
