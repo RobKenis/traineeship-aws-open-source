@@ -1,0 +1,6 @@
+---
+Resources:
+  MyRepository:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: traineeship-rob
