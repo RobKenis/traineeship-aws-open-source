@@ -28,3 +28,8 @@ ansible all -m ping
 ```
 
 [Ansible: dynamic hosts](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html)
+
+## Deploying an application
+```shell
+ansible-playbook application.yaml
+```
