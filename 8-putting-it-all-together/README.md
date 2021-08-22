@@ -12,5 +12,7 @@ the image. Documentation can be found [here](https://boto3.amazonaws.com/v1/docu
 - Publish a message on an SNS topic connected to your e-mail. Documentation can be found [here](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.publish). You can set
 the **subject** to 'Image recognized of <person>' and include a downloadable image in the body.
 
+Bonus points if you use the container approach for Lambda and push the images to ECR.
+
 ## Other possible solution
 Create an ECS service that polls the contents of an S3 bucket
