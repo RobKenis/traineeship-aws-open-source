@@ -1,0 +1,2 @@
+boto
+ansible==2.6.20

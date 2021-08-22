@@ -1,0 +1,10 @@
+---
+- hosts: all # Will run on all instances
+  tasks:
+    - name: Test connection
+      ping:
+
+- hosts: tag_Name_robkenis # Will run on all instances tagged with Name: robkenis
+  tasks:
+    - name: Test connection
+      ping:
