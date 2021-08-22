@@ -37,12 +37,12 @@ Resources:
           CachedMethods:
             - GET
             - HEAD
-            - OPTIONS
           TargetOriginId: default
           ViewerProtocolPolicy: redirect-to-https
+          ForwardedValues:
+            QueryString: False
         PriceClass: PriceClass_100
         ViewerCertificate:
           AcmCertificateArn: !Ref Certificate
-          CloudFrontDefaultCertificate: False
           SslSupportMethod: sni-only
 
