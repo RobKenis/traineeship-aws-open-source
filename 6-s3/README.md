@@ -32,5 +32,7 @@ After applying the changes, the console shows a **Bucket website endpoint**, use
 website.
 
 ## Enable caching
+> This CloudFormation stack needs to be deployed in **us-east-1**. 
+
 Deploy [cloudfront.yaml](cloudfront.yaml) using the CloudFormation console.
 
