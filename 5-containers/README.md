@@ -41,5 +41,12 @@ docker run 811286505646.dkr.ecr.eu-west-1.amazonaws.com/<your-registry>:latest
 Deploy [ecs_cluster.yaml](ecs_cluster.yaml) using the CloudFormation console.
 
 ### Creating an ECS service
+Deploy [ecs_service.yaml](ecs_service.yaml) using the CloudFormation console.
 
 ### Exposing the application
+To connect to the application running inside the container, find out the public IP and connect
+to it on `http://<public-ip>:8080/`. The public IP can be found at *Cluster > Tasks*, click on
+your running task and look for **Public IP**.
+
+This IP can change, so let's set up a load balancer and DNS.
+Deploy [ecs_service_with_load_balancer.yaml](ecs_service_with_load_balancer.yaml) using the CloudFormation console.
