@@ -1,0 +1,22 @@
+---
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda with API gateway
+Resources:
+  HelloWorldLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: python3.6
+      InlineCode: |
+        def handler(event, context):
+          return {
+              "statusCode": 200,
+              "body": "Hello, world!"
+          }
+      Tracing: Active
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
