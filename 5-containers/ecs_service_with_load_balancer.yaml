@@ -61,6 +61,14 @@ Resources:
           PortMappings:
             - ContainerPort: 8080
               HostPort: 8080
+          LogConfiguration:
+            LogDriver:  awslogs
+            Options:
+              awslogs-region: eu-west-1
+              awslogs-group: /traineeship/rob/ecs/
+              awslogs-stream-prefix: traineeship
+    DependsOn:
+      - LogGroup
   SecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -159,3 +167,8 @@ Resources:
       AliasTarget:
         DNSName: !GetAtt LoadBalancer.DNSName
         HostedZoneId: !GetAtt LoadBalancer.CanonicalHostedZoneID
+  LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: /traineeship/rob/ecs/
+      RetentionInDays: 7
