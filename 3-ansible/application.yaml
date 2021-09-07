@@ -11,16 +11,14 @@
 
     - name: Ensure a list of yum packages are installed
       yum:
-        name: "{{ packages }}"
-        state: latest
-        update_cache: yes
-      vars:
-        packages:
+        name:
           - python-pip
           - yum-utils
           - device-mapper-persistent-data
           - lvm2
           - amazon-linux-extras
+        state: latest
+        update_cache: yes
 
     - name: Add extras repository
       shell: yum-config-manager --enable extras
@@ -36,18 +34,20 @@
 
     - name: Ensure Python pip packages are installed
       pip:
-        name: "{{ packages }}"
-      vars:
-        packages:
+        executable: pip3
+        name:
           - boto
           - boto3
           - docker-compose
 
+#    - name: Deploy nginx
+#      docker_container:
+#        name: nginx
+#        image: nginx
+#        state: started
+#        restart: yes
+#        ports:
+#          - "80:80"
+
     - name: Deploy nginx
-      docker_container:
-        name: nginx
-        image: nginx
-        state: started
-        restart: yes
-        ports:
-          - "80:80"
+      shell: docker run -d -p 80:80 --name nginx nginx
