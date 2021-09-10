@@ -32,4 +32,4 @@ minikube service --url nginx
 # Deploying on AWS EKS
 The `deployment.yaml` and `service.yaml` can be reused on EKS. To expose the application to the internet
 create an ingress. The ingress controller installed on the cluster is the [AWS ALB Controller](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.2/). Make sure the ingress is 
-public-facing with a nice DNS record.
+public-facing with a nice DNS record. Documentation for the correct annotations can be found [here](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.2/guide/ingress/annotations/).
