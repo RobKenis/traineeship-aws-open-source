@@ -17,6 +17,10 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-dynamodb
+	implementation group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.12.63'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

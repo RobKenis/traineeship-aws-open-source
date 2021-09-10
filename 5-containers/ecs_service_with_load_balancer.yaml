@@ -40,6 +40,7 @@ Resources:
                   - "ecr:BatchGetImage"
                   - "logs:CreateLogStream"
                   - "logs:PutLogEvents"
+                  - "dynamodb:PutItem"
                 Resource: '*'
   TaskDefinition:
     Type: AWS::ECS::TaskDefinition

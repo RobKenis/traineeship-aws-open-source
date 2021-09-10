@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nginx
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/subnets: "subnet-93c9def5,subnet-6f247435,subnet-29cc2a62"
+spec:
+  rules:
+    - host: "nginx.rob.traineeship-2021.axxes.cloud:"
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: nginx
+              servicePort: http
