@@ -11,7 +11,7 @@ Parameters:
     Description: Full name of the ECS cluster
   DomainName:
     Type: String
-    Default: rob.traineeship-2021.axxes.cloud
+    Default: rob.traineeship-2022.axxes.cloud
     Description: DNS name for your service
 Resources:
   EcsServiceRole:
@@ -156,9 +156,9 @@ Resources:
       SecurityGroups:
         - !GetAtt LoadBalancerSecurityGroup.GroupId
       Subnets:
-        - subnet-93c9def5
-        - subnet-6f247435
-        - subnet-29cc2a62
+        - subnet-0c412b2893e1cc980
+        - subnet-0de05c6b8c43703c5
+        - subnet-061a8897e8694d873
   DNSRecord:
     Type: AWS::Route53::RecordSet
     Properties:

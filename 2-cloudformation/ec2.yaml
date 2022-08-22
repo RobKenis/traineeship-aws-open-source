@@ -24,7 +24,7 @@ Resources:
   Ec2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: 'ami-02b4e72b17337d6c1'
+      ImageId: 'ami-089950bc622d39ed8'
       InstanceType: 't2.nano'
       KeyName: !Ref KeyPair
       SecurityGroupIds: [!Ref SecurityGroup]

@@ -77,7 +77,7 @@ Resources:
           AssignPublicIp: ENABLED
           SecurityGroups:
             - !GetAtt SecurityGroup.GroupId
-          Subnets:
-            - subnet-93c9def5
-            - subnet-6f247435
-            - subnet-29cc2a62
+        Subnets:
+          - subnet-0c412b2893e1cc980
+          - subnet-0de05c6b8c43703c5
+          - subnet-061a8897e8694d873

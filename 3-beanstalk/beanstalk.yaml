@@ -61,7 +61,7 @@ Resources:
       ApplicationName: !Ref Application
       Description: !Join [ ' ', [ 'Dev environment for', !Ref Application ] ]
       EnvironmentName: !Join [ '-', [ !Ref Application, 'dev' ] ]
-      SolutionStackName: '64bit Amazon Linux 2 v3.2.5 running Corretto 11'
+      SolutionStackName: '64bit Amazon Linux 2 v3.3.1 running Corretto 11'
       OptionSettings:
         - Namespace: 'aws:autoscaling:launchconfiguration'
           OptionName: 'IamInstanceProfile'
