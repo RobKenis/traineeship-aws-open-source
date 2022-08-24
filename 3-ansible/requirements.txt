@@ -1,2 +1,2 @@
 boto
-ansible==2.6.20
+ansible==2.9.8
