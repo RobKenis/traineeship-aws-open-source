@@ -17,7 +17,7 @@ Resources:
       ValidationMethod: DNS
       DomainValidationOptions:
         - DomainName: !Ref DomainName
-          HostedZoneId: Z0574888248ARBUZ1RUNH
+          HostedZoneId: Z07011291DYPENE0XZTE8
   CloudFront:
     Type: AWS::CloudFront::Distribution
     Properties:
@@ -49,7 +49,7 @@ Resources:
   DNSRecord:
     Type: AWS::Route53::RecordSet
     Properties:
-      HostedZoneId: Z0574888248ARBUZ1RUNH
+      HostedZoneId: Z07011291DYPENE0XZTE8
       Name: !Ref DomainName
       Type: A
       AliasTarget:

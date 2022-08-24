@@ -3,11 +3,11 @@ AWSTemplateFormatVersion: 2010-09-09
 Parameters:
   Image:
     Type: String
-    Default: 811286505646.dkr.ecr.eu-west-1.amazonaws.com/traineeship-rob:latest
+    Default: 084518896710.dkr.ecr.eu-west-1.amazonaws.com/traineeship-rob:latest
     Description: Full name of the image in ECR
   Cluster:
     Type: String
-    Default: rob-ecs-cluster
+    Default: rob
     Description: Full name of the ECS cluster
   DomainName:
     Type: String
@@ -95,9 +95,9 @@ Resources:
           SecurityGroups:
             - !GetAtt SecurityGroup.GroupId
           Subnets:
-            - subnet-93c9def5
-            - subnet-6f247435
-            - subnet-29cc2a62
+            - subnet-0c412b2893e1cc980
+            - subnet-0de05c6b8c43703c5
+            - subnet-061a8897e8694d873
     DependsOn: ListenerHTTPS
   Certificate:
     Type: AWS::CertificateManager::Certificate
@@ -106,7 +106,7 @@ Resources:
       ValidationMethod: DNS
       DomainValidationOptions:
         - DomainName: !Ref DomainName
-          HostedZoneId: Z0574888248ARBUZ1RUNH
+          HostedZoneId: Z07011291DYPENE0XZTE8
   TargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
@@ -118,7 +118,7 @@ Resources:
       Name: !Join [ '', [ !Ref Cluster, TargetGroup ] ]
       Port: 8080
       Protocol: HTTP
-      VpcId: vpc-80ed48f9
+      VpcId: vpc-03a0536bb9688322b
       TargetGroupAttributes:
         - Key: deregistration_delay.timeout_seconds
           Value: 60 # default is 300
@@ -162,7 +162,7 @@ Resources:
   DNSRecord:
     Type: AWS::Route53::RecordSet
     Properties:
-      HostedZoneId: Z0574888248ARBUZ1RUNH
+      HostedZoneId: Z07011291DYPENE0XZTE8
       Name: !Ref DomainName
       Type: A
       AliasTarget:

@@ -21,7 +21,7 @@ In the top right corner, you should see a button with **View push commands**
 
 ### Pushing your image
 ```shell
-aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 811286505646.dkr.ecr.eu-west-1.amazonaws.com
+aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 084518896710.dkr.ecr.eu-west-1.amazonaws.com
 ```
 ```shell
 docker tag traineeship:latest 811286505646.dkr.ecr.eu-west-1.amazonaws.com/<your-registry>:latest
